@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Font path must be provided"
+  exit 1
+fi
+
+fontforge -script ~/cloned/nerd-fonts/font-patcher -c -out ~/nat-dots/fonts/ "$1"
+fc-cache -fv
