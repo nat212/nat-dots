@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-export PRIMARY_MONITOR=$(polybar -m | grep 'primary' | cut -d':' -f1)
-export SECONDARY_MONITOR=$(polybar -m | grep -v 'primary' | head | cut -d':' -f1)
-if [[ -z "$PRIMARY_MONITOR" ]]; then
-  export PRIMARY_MONITOR=$SECONDARY_MONITOR
-fi
 if [[ -z "$1" ]]; then
   echo "No bar specified";
   exit 1;
@@ -12,11 +7,18 @@ fi
 
 killall -q polybar
 
-for bar in "$@"; do
+for param in "$@"; do
+  bar=$(echo $param | cut -d':' -f1)
+  monitor=$(echo $param | cut -d':' -f2)
+  if [[ "$bar" == "$monitor" ]] || [[ -z "$monitor" ]]; then
+    echo "Invalid format: $param"
+    echo "Must be format <bar>:<monitor>"
+    exit 1
+  fi
   logfile="/tmp/polybar_${bar}.log"
   touch $logfile
   echo "Launching $bar"
-  polybar "$bar" >>$logfile 2>&1 & disown
+  POLYBAR_MONITOR=$monitor polybar "$bar" >>$logfile 2>&1 & disown
 done
 
 echo "Bars launched..."
