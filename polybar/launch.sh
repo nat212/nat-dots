@@ -2,7 +2,9 @@
 
 export PRIMARY_MONITOR=$(polybar -m | grep 'primary' | cut -d':' -f1)
 export SECONDARY_MONITOR=$(polybar -m | grep -v 'primary' | head | cut -d':' -f1)
-
+if [[ -z "$PRIMARY_MONITOR" ]]; then
+  export PRIMARY_MONITOR=$SECONDARY_MONITOR
+fi
 if [[ -z "$1" ]]; then
   echo "No bar specified";
   exit 1;
