@@ -29,7 +29,7 @@ esac
 dbus-send \
   --system \
   --print-reply \
-  --dest=org.freedesktop1.login1 \
+  --dest=org.freedesktop.login1 \
   /org/freedesktop/login1 \
   "org.freedesktop.login1.Manager.$ENDPOINT" \
   boolean:true
