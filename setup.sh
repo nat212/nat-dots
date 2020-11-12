@@ -24,3 +24,7 @@ fc-cache -fv
 mkdir -p ~/.local/bin/
 ln -s ~/nat-dots/scripts/patch-font ~/.local/bin/
 ln -s ~/nat-dots/scripts/exit ~/.local/bin/wm-exit
+
+# Setup dunst
+mkdir -p ~/.config/dunst
+ln -sf ~/nat-dots/dunstrc ~/.config/dunst/dunstrc
