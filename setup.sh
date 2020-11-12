@@ -21,4 +21,6 @@ ln -s ~/nat-dots/fonts ~/.local/share/fonts/nat-dots
 fc-cache -fv
 
 # Setup scripts...
+mkdir -p ~/.local/bin/
 ln -s ~/nat-dots/scripts/patch-font ~/.local/bin/
+ln -s ~/nat-dots/scripts/exit ~/.local/bin/wm-exit

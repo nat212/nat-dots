@@ -1,0 +1,35 @@
+#!/bin/bash
+
+if [[ -z "$1" ]]; then
+  echo "Argument required"
+  exit 1
+fi
+
+case $1 in
+  poweroff)
+    ENDPOINT="PowerOff"
+    ;;
+  reboot)
+    ENDPOINT="Reboot"
+    ;;
+  suspend)
+    ENDPOINT="Suspend"
+    ;;
+  hibernate)
+    ENDPOINT="Hibernate"
+    ;;
+  hybrid)
+    ENDPOINT="HybridSleep"
+    ;;
+  *)
+    echo "Arument must be one of: poweroff, reboot, suspend, hibernate, hybrid"
+    exit 1
+    ;;
+esac
+dbus-send \
+  --system \
+  --print-reply \
+  --dest=org.freedesktop1.login1 \
+  /org/freedesktop/login1 \
+  "org.freedesktop.login1.Manager.$ENDPOINT" \
+  boolean:true
