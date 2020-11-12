@@ -13,6 +13,7 @@ ln -sf ~/nat-dots/kitty.conf ~/.config/kitty/kitty.conf
 # Setup polybar
 rm -rf ~/.config/polybar
 ln -s ~/nat-dots/polybar ~/.config/polybar
+ln -s main.ini ~/.config/polybar/config
 
 # Setup fonts
 mkdir -p ~/.local/share/fonts
