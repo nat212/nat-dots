@@ -28,3 +28,7 @@ ln -s ~/nat-dots/scripts/exit ~/.local/bin/wm-exit
 # Setup dunst
 mkdir -p ~/.config/dunst
 ln -sf ~/nat-dots/dunstrc ~/.config/dunst/dunstrc
+
+# Setup picom
+mkdir -p ~/.config/picom
+ln -sf ~/nat-dots/picom.conf ~/.config/picom/picom.conf
