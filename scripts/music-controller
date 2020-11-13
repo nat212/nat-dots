@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+class TextScroller:
+
+    def __init__(self, length: int):
+        self.length = length
+        self.index = 0
+
+    def setText(self, text: str):
+        self.text = text
+        self._curr_text = ""
+
+    def scrollText(self):
+        if len(self.text) <= self.length:
+            self._curr_text = self.text
+        else:
+            self._curr_text

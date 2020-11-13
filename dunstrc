@@ -31,8 +31,6 @@
     # screen width minus the width defined in within the geometry option.
     geometry = "300x5-30+20"
 
-    corner_radius = 5
-
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
 
@@ -87,7 +85,7 @@
 
     ### Text ###
 
-    font = Montserrat 10
+    font = Poppins Nerd Font 12
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
