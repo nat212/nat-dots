@@ -16,3 +16,5 @@ else # Can be configured to output differently when player is paused
     polybar-msg -p "$(pgrep -f "polybar main")" hook spotify-play-pause 1 1>/dev/null 2>&1
     playerctl --player=spotify metadata --format "{{ title }} - {{ artist }}"
 fi
+
+exit 0
