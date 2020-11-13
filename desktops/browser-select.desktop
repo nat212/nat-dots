@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Select Browser
+Exec=/home/natasha/nat-dots/scripts/browser-select %U
+Actions=new-window;new-private-window;NewShortcut;NewShortcut1;
+MimeType=text/html;text/xml;application/xhtml_xml;image/webp;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;
+Categories=Network;WebBrowser;
+StartupNotify=true

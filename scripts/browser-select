@@ -1,0 +1,12 @@
+#!/usr/bin/fish
+
+if test -z "$argv[1]"
+  echo "Link required"
+  exit 1
+end
+
+if pgrep -x brave >/dev/null 2>&1
+  /usr/bin/brave-browser "$argv[1]"
+else
+  /usr/bin/firefox "$argv[1]"
+end

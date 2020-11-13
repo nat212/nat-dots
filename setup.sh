@@ -32,3 +32,7 @@ ln -sf ~/nat-dots/dunstrc ~/.config/dunst/dunstrc
 # Setup picom
 mkdir -p ~/.config/picom
 ln -sf ~/nat-dots/picom.conf ~/.config/picom/picom.conf
+
+# Setup desktop files
+mkdir -p ~/.local/share/applications
+ln -sf ~/nat-dots/desktops/browser-select.desktop ~/.local/share/applications/
