@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-echo $(playerctl --ignore-player=chromium status 2>&1)
+echo $(playerctl --ignore-player=chromium,firefox status 2>&1)
 exit 0
